@@ -21,15 +21,17 @@ public class CnesServiceImpl implements CnesService{
 	}
 
 	@Override
-	public List<Estabelecimento> findByTipo() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Estabelecimento> findByTipo(String tipo) {
+		
+		return estabelecimentoRepository.findByTipo(tipo);
+
 	}
 
 	@Override
-	public List<Estabelecimento> findByUf() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Estabelecimento> findByUf(String uf) {
+		
+		return estabelecimentoRepository.findByUF(uf);
+	
 	}
 
 	@Override
@@ -40,8 +42,9 @@ public class CnesServiceImpl implements CnesService{
 
 	@Override
 	public Estabelecimento findByCep(Long cep) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return estabelecimentoRepository.findByCep(cep);
+		
 	}
 
 	@Override

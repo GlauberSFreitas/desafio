@@ -1,10 +1,14 @@
 package com.mv.desafio.model;
 
 import javax.persistence.*;
+
 @Entity
 @Table(name="TB_CNESATIVOS")
 public class Estabelecimento {
 	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	private Long id;
+	
 	private Long codCnes; 
 	
 	private Long codIbge;
@@ -124,6 +128,16 @@ public class Estabelecimento {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	
+	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public Estabelecimento() {
 	}
@@ -143,7 +157,7 @@ public class Estabelecimento {
 		this.municipio = municipio;
 		this.telefone = telefone;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Estabelecimento [codCnes=" + codCnes + ", codIbge=" + codIbge + ", nomeFantasia=" + nomeFantasia

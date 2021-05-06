@@ -5,8 +5,8 @@ import com.mv.desafio.model.Estabelecimento;
 public interface CnesService {
 	
 List<Estabelecimento> findAll();
-List<Estabelecimento> findByTipo();
-List<Estabelecimento> findByUf();
+List<Estabelecimento> findByTipo(String tipo);
+List<Estabelecimento> findByUf(String uf);
 Estabelecimento findByid(Long id);
 Estabelecimento findByCep(Long cep);
 Estabelecimento save(Estabelecimento estabelecimento);
