@@ -6,6 +6,8 @@ no arquivo aplication.properties, em spring.datasource.url= por o url do seu ban
 em spring.datasource.username= por o nome do usuario do banco postgresql em seguida por a senha em
 spring.datasource.password=
 
+Para mudar a porta no application.properties ex: server.port=8081
+
 com o aplication.properties configurado basta selecionar o projeto e Run As Spring Boot App e no browser http://localhost:8080/index.
 
 Obs: No src/main/java ha um pacote com o nome utils e dentro dele uma classe chamada Popular Banco,
