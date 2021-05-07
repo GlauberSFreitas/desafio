@@ -2,8 +2,8 @@
 
 Esta aplicação foi feita no Spring Tool Suite 4 e usa um banco PostgreSQL,
 para configurar o ambiente é necessário abrir no projeto em src/main/resources 
-no arquivo aplication.properties, em spring.datasource.url= por o url do seu banco de dados postgresql,
-em spring.datasource.username= por o nome do usuario do banco postgresql em seguida por a senha em
+no arquivo aplication.properties, em spring.datasource.url= mudar pelo url do seu banco de dados postgresql,
+em spring.datasource.username= o nome do usuario do banco postgresql em seguida por a senha em
 spring.datasource.password=
 
 Para mudar a porta no application.properties ex: server.port=8081
