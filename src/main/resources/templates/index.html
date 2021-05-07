@@ -33,7 +33,7 @@
 
 								<input type="submit" value="BuscarTipo"
 									class="btn btn-outline-primary" id="btntipoid"> <input
-									name="tipo" id="tipoinputid">
+									name="tipo" id="tipoinputid" maxlength="50">
 							</form>
 						</div>
 					</div>
@@ -45,9 +45,9 @@
 					<div class="card">
 						<div class="card-body">
 							<form action="pesquisaruf" method="post">
-								<input type="submit" value="BuscarUF"
+								<input type="submit" value="Buscar Estado"
 									class="btn btn-outline-primary" id="btnufid"> <input
-									name="uf" id="ufinputid">
+									name="uf" id="ufinputid" maxlength="20">
 							</form>
 						</div>
 					</div>
@@ -71,7 +71,7 @@
 						</form>
 					</div>
 					<div class="card">
-						<div class="card-body" hidden="false">
+						<div class="card-body" hidden="true">
 							<form action="pesquisarcep" method="post">
 								<input type="submit" value="BuscarCep"
 									class="btn btn-outline-primary"> <input type="number"

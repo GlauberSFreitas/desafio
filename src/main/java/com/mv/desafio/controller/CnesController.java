@@ -1,7 +1,10 @@
 package com.mv.desafio.controller;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +22,10 @@ public class CnesController {
 	@Autowired
 	CnesService cnesService;
 	
+	
+	
+	
+
 	@GetMapping(value = "/index") 
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("/index");
@@ -46,7 +53,14 @@ public class CnesController {
 	@PostMapping(value = "**/pesquisaruf") 
 	public ModelAndView buscarUf(@RequestParam("uf")String uf) {
 		ModelAndView mv = new ModelAndView("/index");
-		List<Estabelecimento> cnes = cnesService.findByUf(uf.toUpperCase());
+		 
+		String ufEstado = cnesService.getEstados().
+									  get(Normalizer.normalize(uf, Normalizer.Form.NFD)
+									  .replaceAll("[^\\p{ASCII}]", "")
+									  .toUpperCase());
+		if(ufEstado==null)
+			ufEstado= uf.toUpperCase();
+		List<Estabelecimento> cnes = cnesService.findByUf(ufEstado);
 		mv.addObject("data", cnes);
 		return mv;
 	}
@@ -59,4 +73,10 @@ public class CnesController {
 		mv.addObject("data", cnes);
 		return mv;
 	}
+
+	
+
+
+	
+	
 }
